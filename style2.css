@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 9999;
+}
+
+.logo {
+    animation: fadeInOut 3s linear;
+    max-width: 600px;
+}
+
+
+
+
+
+
+body {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(temporada1/imagens/fundo1.jpg) no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+span#burguer {
+    background-color: rgba(0, 0, 0, 0.400);
+    color: rgb(255, 255, 255);
+    display: block;
+    text-align: center;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+span#burguer:hover {
+    background-color: rgba(255, 255, 255, 0.555);
+    color: rgb(255, 255, 255);
+    
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+}
+
+menu {
+    display: none;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+    
+  
+    
+}
+
+menu > ul {
+    
+    list-style-type: none;
+    
+
+    
+}
+
+
+
+menu > ul > li > a {
+    background-color: gray;
+    display: flex;
+    padding: 12px;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.400);
+    color: rgb(255, 255, 255);
+    border-top: 2px solid rgba(128, 128, 128, 0);
+    columns: 3;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    
+}
+
+menu > ul > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.377);
+    
+    
+}
+
+
+
+h6 {
+    font-size: 1.5em;
+    background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(208, 255, 0));
+    min-height: 0px;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 2px 7px 7px black;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+selection > img {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    border-radius: 20px 0px;
+    box-shadow: 2px 7px 7px black;
+    text-align: center;
+    display: block;
+    }
+
+section#redes-sociais {
+    text-align: center;
+}
+
+section#redes-sociais img {
+    width: 50px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+}
+
+header {
+    min-height: 80px;
+    text-align: center;
+    text-align: center;
+
+}
+
+header > img {
+    max-width: 400px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+header > h3 {
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0.555);
+    min-height: 0px;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 2px 7px 7px black;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+li {
+    font-size: 0.8em;
+    min-height: 5px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    columns: 3;
+    
+}
+
+ul > li > a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgba(5, 5, 5, 0.555);
+    color: rgb(255, 255, 255);
+    border-top: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 10px 10px;
+    
+    
+
+}
+
+h1 {
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0.555);
+    min-height: 0px;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 2px 7px 7px black;
+    /* border-radius: 15px 0px; */
+    text-align: center;
+    
+}
+
+ h5 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1em;
+    margin: 5px;
+    padding: 0px;
+    background-color: rgba(4, 1, 19, 0.5);
+    border-radius: 10px;
+    box-shadow: 2px 7px 7px black;
+}
+
+nav {
+    font-size: 1.5em;
+    background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(208, 255, 0));
+    min-height: 0px;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 2px 7px 7px black;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+
+footer  > h4 {
+    color: #000000;
+    text-align: center;
+    font-size: 1em;
+    margin: 5px;
+    padding: 0px;
+    background-color: rgba(255, 230, 3, 0.74);
+    border-radius: 5px;
+    box-shadow: 2px 7px 7px black;
+    
+}
+
+
+
+
+.banner-frase {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: white;
+  font-size: 2em;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 3s ease-in-out;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.episodios {
+  
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: rgba(247, 247, 247, 0.349);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 1.em;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #ffee00;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: bold;
+}
