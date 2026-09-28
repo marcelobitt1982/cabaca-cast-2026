@@ -1,333 +1,364 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@600;700&family=Poppins:wght@300;400;600&display=swap');
 
+/* =========================================================
+   FUNDO DINÂMICO QUE MUTA DE LARANJA CLARO PARA ESCURO
+   ========================================================= */
+body {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    
+    /* Animação do gradiente de cor de fundo */
+    background: linear-gradient(-45deg, #ff7b00, #ffae00, #e65100, #ff9100);
+    background-size: 400% 400%;
+    animation: gradienteLaranja 12s ease infinite;
+    position: relative;
+    overflow-x: hidden;
+}
 
-#splash-screen {
+@keyframes gradienteLaranja {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================================================
+   EFEITO DE ONDAS VISÍVEIS EM TODO O FUNDO
+   ========================================================= */
+.ocean { 
+    height: 100%;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.wave {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-400-50s-244.5 50-400 50v31.8h800v-31.8z' fill='%23ffffff' fill-opacity='0.25'/%3E%3C/svg%3E") repeat-x;
+    position: absolute;
+    bottom: 0;
+    width: 6400px;
     height: 100%;
-    display: flex;
-    justify-content: center;
+    animation: wave 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    bottom: -10px;
+    animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 10s ease -1.25s infinite;
+    opacity: 0.6;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1600px); }
+}
+
+@keyframes swell {
+    0%, 100% { transform: translate3d(0,-25px,0); }
+    50% { transform: translate3d(0,15px,0); }
+}
+
+/* =========================================================
+   BOTÃO "VOLTAR AO INÍCIO" DESTACADO
+   ========================================================= */
+.btn-inicio-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-inicio {
+    display: inline-flex;
     align-items: center;
-    background-color: black;
-    z-index: 9999;
+    gap: 8px;
+    background: rgba(10, 10, 20, 0.75);
+    backdrop-filter: blur(10px);
+    color: #00f0ff;
+    padding: 10px 22px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85em;
+    font-weight: 700;
+    border-radius: 25px;
+    border: 1px solid #00f0ff;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+    transition: all 0.3s ease;
 }
 
-.logo {
-    animation: fadeInOut 3s linear;
-    max-width: 600px;
+.btn-inicio:hover {
+    background: #00f0ff;
+    color: #000000;
+    box-shadow: 0 0 20px #00f0ff;
+    transform: scale(1.05);
 }
 
+/* =========================================================
+   ELEMENTOS CYBERPUNK / NEON
+   ========================================================= */
+header {
+    min-height: 80px;
+    text-align: center;
+}
+
+header > img {
+    max-width: 380px;
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.5));
+}
+
+.banner-frase {
+    background: rgba(10, 10, 15, 0.75);
+    backdrop-filter: blur(10px);
+    color: #00f0ff;
+    font-size: 1.2em;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 90%;
+    border: 1px solid #ff9100;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.2);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+}
+
+h1 {
+    font-size: 1.4em;
+    font-family: 'Orbitron', sans-serif;
+    background: rgba(15, 10, 25, 0.85);
+    color: #ff9100;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    text-shadow: 0 0 8px #ff9100;
+}
 
 h2 {
-  display: inline-block; /* Faz o fundo se ajustar ao conteúdo */
-  background-color: rgba(255, 255, 255, 0.733);
-  padding: 4px 8px; /* Ajuste conforme necessário */
-  font-size: 30px; /* Certifique-se de que o tamanho da fonte está correto */
-  line-height: 1.2; /* Pode ajudar a alinhar verticalmente */
-  box-shadow: 2px 7px 7px black;
-    border-radius: 10px;
+    display: inline-block;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(8px);
+    color: #00f0ff;
+    padding: 6px 20px;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+    border: 1px solid #ff9100;
+    box-shadow: 0 0 12px rgba(255, 145, 0, 0.6);
+    border-radius: 20px;
+    text-shadow: 0 0 6px #00f0ff;
     text-align: center;
 }
 
-
-
-
-
-
-body {
-    max-width: 1000px;
-    margin: auto;
-    margin-bottom: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: url(temporada1/imagens/fundo1.jpg) no-repeat top center;
-    background-size: cover;
-    background-attachment: fixed;
+/* =========================================================
+   CARDS DE EPISÓDIOS
+   ========================================================= */
+.episodios {
+    text-align: center;
 }
 
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
 
+.card {
+    background: rgba(15, 15, 25, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    width: 260px;
+    padding: 15px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #ff9100;
+    box-shadow: 0 0 20px rgba(255, 145, 0, 0.6);
+}
+
+.card img {
+    max-width: 180px;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: linear-gradient(90deg, #ff9100, #ff0055);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 18px rgba(255, 145, 0, 0.9);
+    transform: scale(1.05);
+}
+
+/* =========================================================
+   MENU E BOTÃO BURGUER
+   ========================================================= */
 span#burguer {
-    background-color: rgba(0, 0, 0, 0.637);
-    color: rgb(255, 255, 255);
+    background: rgba(10, 10, 20, 0.65);
+    backdrop-filter: blur(8px);
+    color: #00f0ff;
     display: block;
     text-align: center;
-    padding: 2px;
+    padding: 8px 12px;
+    margin: 15px auto;
+    max-width: 240px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8em;
+    border: 1px solid #00f0ff;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    transition: all 0.3s ease;
 }
 
 span#burguer:hover {
-    background-color: rgba(255, 255, 255, 0.192);
-    color: rgb(255, 255, 255);
-    
+    background: rgba(255, 145, 0, 0.8);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 145, 0, 0.8);
 }
 
-ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-    unicode-bidi: isolate;
+span#burguer img {
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 6px;
 }
 
 menu {
     display: none;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-    unicode-bidi: isolate;
-    
-  
-    
+    padding: 0;
+    margin: 15px 0;
 }
 
-menu > ul {
-    
-    list-style-type: none;
-    
-
-    
+menu > ul, ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
+menu > ul > li, ul > li {
+    display: inline-block;
+    margin: 4px;
+    padding: 0;
+}
 
-
-menu > ul > li > a {
-    background-color: rgba(255, 255, 255, 0.192);
-    display: flex;
-    padding: 12px;
+menu > ul > li > a, ul > li > a {
+    background: rgba(10, 10, 20, 0.6);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    display: inline-block;
+    padding: 6px 14px;
     text-decoration: none;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.637);
-    color: rgb(255, 255, 255);
-    border-top: 2px solid rgba(128, 128, 128, 0);
-    columns: 3;
-    flex-shrink: 1;
-    flex-grow: 1;
-
-    
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.88em;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 145, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
-menu > ul > li > a:hover {
-    background-color: rgba(255, 255, 255, 0.192);
-    
-    
+menu > ul > li > a:hover, ul > li > a:hover {
+    background: #00f0ff;
+    color: #000000;
+    box-shadow: 0 0 12px #00f0ff;
+    border-color: #ffffff;
 }
 
-
-
-h6 {
-    font-size: 1.5em;
-    background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(208, 255, 0));
-    min-height: 0px;
-    text-align: center;
-    margin: 20px;
-    padding: 5px;
-    box-shadow: 2px 7px 7px black;
-    border-radius: 10px;
-    text-align: center;
-    
-}
-
+/* =========================================================
+   TEXTO DA HISTÓRIA E FOTOS
+   ========================================================= */
 selection > img {
     margin: 0 auto;
     width: 50%;
     height: auto;
-    border-radius: 20px 0px;
-    box-shadow: 2px 7px 7px black;
-    text-align: center;
+    border-radius: 16px;
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
     display: block;
-    }
+}
 
+h5 {
+    color: #ffffff;
+    text-align: justify;
+    font-size: 1em;
+    line-height: 1.7;
+    margin: 10px auto;
+    padding: 20px 25px;
+    background: rgba(10, 10, 15, 0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Redes Sociais */
 section#redes-sociais {
     text-align: center;
 }
 
 section#redes-sociais img {
-    width: 50px;
-    margin: 10px;
+    width: 42px;
+    margin: 6px;
     border-radius: 50%;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.400);
-    box-sizing: border-box;
+    border: 2px solid #ff9100;
+    box-shadow: 0 0 10px rgba(255, 145, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
-header {
-    min-height: 80px;
+section#redes-sociais img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #00f0ff;
+    border-color: #00f0ff;
+}
+
+/* Footer */
+footer > h4 {
+    color: #00f0ff;
     text-align: center;
-    text-align: center;
-
-}
-
-header > img {
-    max-width: 400px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0px;
-    text-align: center;
-}
-
-header > h3 {
-    font-size: 1.5em;
-    background-color: rgba(255, 255, 255, 0.192);
-    min-height: 0px;
-    text-align: center;
-    margin: 20px;
-    padding: 5px;
-    box-shadow: 2px 7px 7px black;
-    border-radius: 10px;
-    text-align: center;
-
-}
-
-
-
-li {
-    font-size: 0.8em;
-    min-height: 5px;
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
-    text-align: center;
-    columns: 3;
-    
-}
-
-ul > li > a{
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    text-align: center;
-    background-color: rgba(5, 5, 5, 0.555);
-    color: rgb(255, 255, 255);
-    border-top: 2px solid rgba(0, 0, 0, 0);
-    border-radius: 10px 10px;
-    
-    
-
-}
-
-h1 {
-    font-size: 1.5em;
-    background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(208, 255, 0));
-    min-height: 0px;
-    text-align: center;
-    margin: 20px;
-    padding: 5px;
-    box-shadow: 2px 7px 7px black;
-    border-radius: 15px 15px;
-    text-align: center;
-    
-}
-
-
- h5 {
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 1.5em;
-    margin: 5px;
-    padding: 0px;
-    background-color: rgba(255, 255, 255, 0.592);
-    border-radius: 15px;
-    box-shadow: 2px 7px 7px black;
-}
-
-nav {
-    font-size: 1.5em;
-    background-image: linear-gradient(to right, rgb(255, 145, 0), rgb(208, 255, 0));
-    min-height: 0px;
-    text-align: center;
-    margin: 20px;
-    padding: 5px;
-    box-shadow: 2px 7px 7px black;
-    border-radius: 10px;
-    text-align: center;
-    
-}
-
-
-footer  > h4 {
-    color: #000000;
-    text-align: center;
-    font-size: 1em;
-    margin: 5px;
-    padding: 0px;
-    background-color: rgba(255, 230, 3, 0.74);
-    border-radius: 5px;
-    box-shadow: 2px 7px 7px black;
-    
-}
-
-
-
-
-.banner-frase {
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  color: white;
-  font-size: 2em;
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  padding: 20px;
-  animation: fadeIn 3s ease-in-out;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 90%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-
-
-.episodios {
-  
-  text-align: center;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.card {
-  background-color: rgba(247, 247, 247, 0.349);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 300px;
-  padding: 15px;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.card h3 {
-  font-size: 1.em;
-  margin: 10px 0;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 10px;
-  background-color: #ffee00;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  border-radius: 15px;
-  font-weight: bold;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9em;
+    margin-top: 25px;
+    padding: 10px;
+    background: rgba(10, 10, 15, 0.85);
+    border-radius: 8px;
+    border-top: 1px solid #ff9100;
 }
